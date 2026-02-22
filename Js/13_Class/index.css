@@ -1,0 +1,45 @@
+details {
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+/* summary style */
+summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* hide default arrow */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* plus / minus icon */
+summary::after {
+  content: "+";
+  float: right;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+/* animated content */
+details p {
+  margin: 0;
+  padding-top: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* when open */
+details[open] p {
+  opacity: 1;
+  transform: translateY(0);
+}

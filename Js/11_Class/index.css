@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#111;
+  color:white;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+main{
+  text-align:center;
+}
+
+.main_desk{
+  display:flex;
+  margin-top:20px;
+}
+
+.key{
+  width:70px;
+  height:220px;
+  background:white;
+  margin:4px;
+  border-radius:8px;
+  font-size:22px;
+  line-height:200px;
+  cursor:pointer;
+  color:black;
+  user-select:none;
+  transition:0.1s;
+}
+
+.key:active{
+  background:#ffd700;
+}

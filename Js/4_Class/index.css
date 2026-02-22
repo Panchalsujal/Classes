@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 300px;
+  width: 250px;
+  background-color: white;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding :1rem;
+}
+
+.card img {
+height: 100px;
+width: 100px;
+object-fit: cover;
+    border-radius: 50%;
+}
+
+.card p {
+
+    color: #888;
+    text-align: center;
+}

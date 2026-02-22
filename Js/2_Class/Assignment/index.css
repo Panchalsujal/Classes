@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.first_section {
+  height: 15rem;
+  width: 100%;
+  background-color: oklab(21.971% 0.00406 -0.06921);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: beige;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: beige;
+  font-style: italic;
+}
+
+.main_content {
+  
+  margin: 2rem 5rem 2rem 5rem;
+}
+.about {
+  height: 15rem;
+  width: 100%;
+  /* background-color: oklch(82.204% 0.0067 16.526 / 0.112); */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  gap: 2rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+}
+
+h2{
+    text-transform:uppercase ;
+}
+
+.details{
+    font-size: 1.2rem;
+    line-height: 1.5;
+  color: rgba(0, 0, 0, 0.674);
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+.Education{
+margin-top: 2rem;
+  height: 15rem;
+  width: 100%;
+  background-color: oklch(66.906% 0.18376 248.826 / 0.135);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  gap: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+
+}
+
+.edu_one{ 
+  /* box-shadow: ; */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+background-color:white ;
+  padding: 1rem 15rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.Skill{
+  margin-top: 2rem;
+  height: 30rem;
+  width: 100%;
+  background-color: oklch(73.508% 0.14029 104.24 / 0.548);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  gap: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.exchange{
+  font-weight: 700;
+  text-transform: uppercase;
+  color :black ;
+}
+
+.Project{
+   margin-top: 2rem;
+  height: 15rem;
+  width: 100%;
+  background-color: oklch(52.866% 0.17463 6.917 / 0.548);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  gap: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.footer{
+    height: 4rem;
+  width: 100%;
+  background-color: oklab(21.971% 0.00406 -0.06921);
+  color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}

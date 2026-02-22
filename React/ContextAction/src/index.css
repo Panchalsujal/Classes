@@ -1,0 +1,40 @@
+@import "tailwindcss";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman";
+  font-weight: 700;
+  font-size: 32px;
+}
+*::selection {
+  background: none;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+.nav-bar {
+  padding: 12px;
+  height: 100px;
+}
+
+.section {
+  padding: 12px;
+
+  height: 582px;
+}
+
+.footer {
+  padding: 12px;
+
+  height: 100px;
+  background: pink;
+}
