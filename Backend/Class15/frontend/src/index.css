@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #868080;
+  color: whitesmoke;
+  font-family: "Times New Roman";
+  font-weight: 700;
+}
