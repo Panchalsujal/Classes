@@ -9,5 +9,4 @@ const postRouter = require("./routes/post.routes");
 app.use("/api/auth/", authRouter);
 app.use("/api/users", userRouter);
 app.use("/api/posts/", postRouter);
-
 module.exports = app;
