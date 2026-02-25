@@ -1,33 +1,24 @@
 import React, { useState } from "react";
 import "../styles/form.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../Hooks/useAuth.js";
 
 const Register = () => {
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const { handleRegister, loading } = useAuth();
+  const navigate = useNavigate();
 
+  if (loading) {
+    return <h1>loading...</h1>;
+  }
   async function registerHendal(e) {
     e.preventDefault();
-
-    try {
-      const res = await axios.post(
-        "http://localhost:3000/api/auth/register",
-        {
-          username,
-          email,
-          password,
-        },
-        {
-          withCredentials: true,
-        },
-      );
-
-      console.log(res.data);
-    } catch (error) {
-      console.log(error.response?.data || error.message);
-    }
+    handleRegister(username, email, password).then((res) => {
+      navigate("/login");
+    });
   }
 
   return (

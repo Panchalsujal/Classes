@@ -101,7 +101,22 @@ async function loginController(req, res) {
   });
 }
 
+async function profilecontroller(req, res) {
+  const userId = req.user.id;
+  const user = await userModel.findById(userId);
+  res.status(200).json({
+    message: "User Profile fetched successfully",
+    user: {
+      email: user.email,
+      username: user.username,
+      bio: user.bio,
+      profilepicture: user.profilepicture,
+    },
+  });
+}
+
 module.exports = {
   loginController,
   registerController,
+  profilecontroller,
 };

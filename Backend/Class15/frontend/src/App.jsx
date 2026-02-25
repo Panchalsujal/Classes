@@ -1,16 +1,13 @@
-import React from "react";
-import { Route, Routes } from "react-router";
-import Register from "./pages/auth/register.jsx";
-import Login from "./pages/auth/login.jsx";
-import Home from "./pages/home.jsx";
-const App = () => {
+import AppRoutes from "./features/auth/Routes/App.Routes.jsx";
+import "./index.css";
+import { AuthProvider } from "./features/auth/Context/auth.context.jsx";
+
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   );
-};
+}
 
 export default App;
