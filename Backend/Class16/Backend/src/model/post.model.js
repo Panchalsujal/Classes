@@ -11,7 +11,7 @@ const postSchema = mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: "userinfo",
     required: [true, "user id is required for creating an post"],
   },
 });
