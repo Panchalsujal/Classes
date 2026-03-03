@@ -1,19 +1,24 @@
-import { createBrowserRouter } from "react-router"
-import Register from "./features/auth/pages/Register"
-import Login from "./features/auth/pages/Login"
-import Protected from "./features/auth/components/Protected"
+import { createBrowserRouter } from "react-router";
+import Register from "./features/auth/pages/Register";
+import Login from "./features/auth/pages/Login";
+import Protected from "./features/auth/components/Protected";
+import { FaceExpression } from "./features/Expression/components/FaceExpression";
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Protected><h1>Home</h1></Protected>
-    },
-    {
-        path: "/register",
-        element: <Register />
-    },
-    {
-        path: "/login",
-        element: <Login />
-    }
-])
+  {
+    path: "/",
+    element: (
+      <Protected>
+        <FaceExpression />
+      </Protected>
+    ),
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
