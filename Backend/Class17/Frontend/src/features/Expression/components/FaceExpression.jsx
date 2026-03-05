@@ -1,39 +1,54 @@
 import { useEffect, useRef, useState } from "react";
-import { detect,init } from "../utils/utils";
+import { detect, init } from "../utils/utils";
 
+export default function FaceExpression({ onClick = () => {} }) {
+  const videoRef = useRef(null);
+  const landmarkerRef = useRef(null);
+  const streamRef = useRef(null);
 
-export  function FaceExpression() {
-    const videoRef = useRef(null);
-    const landmarkerRef = useRef(null);
-    const streamRef = useRef(null);
+  const [expression, setExpression] = useState("Detecting...");
 
-    const [ expression, setExpression ] = useState("Detecting...");
+  useEffect(() => {
+    async function start() {
+      await init({ landmarkerRef, videoRef, streamRef });
 
-    useEffect(() => {
-        init({landmarkerRef,videoRef,streamRef});
+      // start continuous detection
+      detect({ landmarkerRef, videoRef, setExpression });
+    }
 
-        return () => {
-            if (landmarkerRef.current) {
-                landmarkerRef.current.close();
-            }
+    start();
 
-            if (videoRef.current?.srcObject) {
-                videoRef.current.srcObject
-                    .getTracks()
-                    .forEach((track) => track.stop());
-            }
-        };
-    }, []);
+    return () => {
+      if (landmarkerRef.current) {
+        landmarkerRef.current.close();
+      }
 
-    return (
-        <div style={{ textAlign: "center" }}>
-            <video
-                ref={videoRef}
-                style={{ width: "400px", borderRadius: "12px" }}
-                playsInline
-            />
-            <h2>{expression}</h2>
-            <button onClick={()=>{detect({landmarkerRef,videoRef,setExpression})}} >Detect expression</button>
-        </div>
-    );
+      if (videoRef.current?.srcObject) {
+        videoRef.current.srcObject
+          .getTracks()
+          .forEach((track) => track.stop());
+      }
+    };
+  }, []);
+
+  function handleClick() {
+    onClick(expression);
+  }
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <video
+        ref={videoRef}
+        autoPlay
+        playsInline
+        style={{ width: "400px", borderRadius: "12px" }}
+      />
+
+      <h2>{expression}</h2>
+
+      <button onClick={handleClick}>
+        Use this expression
+      </button>
+    </div>
+  );
 }
